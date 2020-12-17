@@ -4,7 +4,7 @@ import (
 	"log"
 )
 
-type Account struct {
+type Agents struct {
  l *log.Logger
 }
 
@@ -18,6 +18,6 @@ type ValidationError struct {
 	Messages []string `json:"messages"`
 }
 
-func NewAccount(l *log.Logger) *Account{
-	return &Account{l}
+func NewAgents(l *log.Logger) *Agents{
+	return &Agents{l}
 }
