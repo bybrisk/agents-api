@@ -58,3 +58,12 @@ type createAccountParamsWrapper struct {
 	// required: true
 	Body data.NewAgentsRequest
 }
+
+// swagger:parameters updateAgents
+type createAccountParamsWrapper struct {
+	// Data structure to update an existing agent.
+	// Note: You need to send all the details required or they will be overwritten
+	// in: body
+	// required: true
+	Body data.UpdateAgentsRequest
+}

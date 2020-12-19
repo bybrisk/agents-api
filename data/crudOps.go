@@ -12,3 +12,24 @@ func AddData (d *NewAgentsRequest) *AgentsPostSuccess{
 
 	return &response
 }
+
+func UpdateAgents(d *UpdateAgentsRequest) *AgentsPostSuccess {
+
+	res := UpdateAgentsByID(d)
+
+	var response AgentsPostSuccess
+	//sending response
+	if res == 1 {
+		response = AgentsPostSuccess{
+			BybID: d.BybID,
+			Message: "Update Done Successfully",
+		}
+	} else {
+		response = AgentsPostSuccess{
+			BybID: d.BybID,
+			Message: "Error updating agents!",
+		}
+	}
+
+	return &response
+}

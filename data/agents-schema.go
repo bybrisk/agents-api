@@ -62,6 +62,64 @@ type NewAgentsRequest struct{
 	AgentID string `json: "agentID" validate:"required"`
 }
 
+//update agents request
+type UpdateAgentsRequest struct {
+
+	// BybID of the agent from database
+	//
+	// required: true
+	// max length: 1000
+	BybID string `json:"bybID" validate:"required"`
+
+	// The url of the profile pic for this agent
+	//
+	// required: false
+	// max length: 1000
+	PicURL string `json:"picurl" validate:"required"`
+
+	// Modified Name of the agent
+	//
+	// required: true
+	// max length: 1000
+	AgentName string `json: "agentName" validate:"required"`
+
+	// Type of Agent
+	//
+	// required: true
+	// example: DELIVERY | CONTRACT
+	AgentType string `json:"agentType" validate:"required"`
+
+	// 10 Digit Phone Number of the agent
+	//
+	// required: true
+	// max length: 1000
+	PhoneNumber string `json: "phoneNumber" validate:"required"`
+
+	// New Permanent Address of the Agent
+	//
+	// required: true
+	// max length: 10000
+	Address string `json: "address" validate:"required"`
+
+	// New Maximum weight (in Kg) the agent can carry in a single trip
+	//
+	// required: true
+	// max length: 1000
+	MaxWeightCapacity int64 `json: "maxWeightCapacity" validate:"required"`
+
+	// New Maximum duration (in hr) the agent can work on a single trip
+	//
+	// required: true
+	// max length: 1000
+	MaxHourCapacity int64 `json: "maxHourCapacity" validate:"required"`
+
+	// Modified Agent Username/ UserID given by Business (unique to that business)
+	//
+	// required: true
+	// max length: 1000
+	AgentID string `json: "agentID" validate:"required"`
+}
+
 //post response
 type AgentsPostSuccess struct {
 	BybID string `json:"bybID"`
@@ -69,6 +127,11 @@ type AgentsPostSuccess struct {
 }
 
 func (d *NewAgentsRequest) Validate() error {
+	validate := validator.New()
+	return validate.Struct(d)
+}
+
+func (d *UpdateAgentsRequest) ValidateUpdateRequest() error {
 	validate := validator.New()
 	return validate.Struct(d)
 }
