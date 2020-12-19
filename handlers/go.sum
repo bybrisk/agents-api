@@ -1,7 +1,7 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/aws/aws-sdk-go v1.34.28/go.mod h1:H7NKnBqNVzoTJpGfLrQkkD+ytBA93eiDYi/+8rV9s48=
-github.com/bybrisk/agents-api/data v0.0.0-20201217165231-a062e16b6bfd h1:gUaUVyhyx1KwO+w02oM3SWUzGnrwD50+i0C5NQra9Hg=
-github.com/bybrisk/agents-api/data v0.0.0-20201217165231-a062e16b6bfd/go.mod h1:2L9GgzrFDdAhkNKCiUeiVvdlq2Dl1WEvQ40zWhxmTXo=
+github.com/bybrisk/agents-api/data v0.0.0-20201219084212-899ee982dccd h1:hcohzO8hBhBBetAtLb97xNwmBwv9QGwrE/AUkdTO7fs=
+github.com/bybrisk/agents-api/data v0.0.0-20201219084212-899ee982dccd/go.mod h1:+mBiZyou9fqYJJeXmsUkrFbe5tdybn0oGQZp5oTw/3o=
 github.com/bybrisk/structs v0.0.0-20201109044720-899a1e012b8c/go.mod h1:+ozPcEcgRTvbDXzFyBlUTgv1G2niBpEsIzF5tySMIck=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

@@ -51,7 +51,7 @@ type noContentResponseWrapper struct {
 }
 
 // swagger:parameters createAgents
-type createAccountParamsWrapper struct {
+type createAgentsParamsWrapper struct {
 	// Agents data structure to Create.
 	// Note: the id field is ignored by create operations
 	// in: body
@@ -60,7 +60,7 @@ type createAccountParamsWrapper struct {
 }
 
 // swagger:parameters updateAgents
-type createAccountParamsWrapper struct {
+type updateAgentsParamsWrapper struct {
 	// Data structure to update an existing agent.
 	// Note: You need to send all the details required or they will be overwritten
 	// in: body
