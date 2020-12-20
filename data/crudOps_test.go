@@ -44,3 +44,12 @@ func TestUpdateAgents(t *testing.T) {
 	}
 
 }
+
+func TestGetAllAgents(t *testing.T) {
+	id:="ivuivrevrhhr"
+	res:= data.GetAllAgents(id) 
+	if res.BusinessID!=id{
+		t.Fail()
+	}
+
+}
