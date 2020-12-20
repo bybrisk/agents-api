@@ -67,3 +67,11 @@ type updateAgentsParamsWrapper struct {
 	// required: true
 	Body data.UpdateAgentsRequest
 }
+
+// Summary of all the agents of a business account
+// swagger:response getAllAgentsDetails
+type agentsGetAllResponseWrapper struct {
+	// Summarised details of all the agents of a business account
+	// in: body
+	Body data.AgentResponseBulk
+}

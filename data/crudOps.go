@@ -33,3 +33,15 @@ func UpdateAgents(d *UpdateAgentsRequest) *AgentsPostSuccess {
 
 	return &response
 }
+
+func GetAllAgents (docID string) *AgentResponseBulk {
+	var response AgentResponseBulk
+	agentsArray := AllAgentsByBusinessID(docID)
+
+	response = AgentResponseBulk{
+		Result: agentsArray,
+		BusinessID: docID,
+	}
+	
+	return &response
+}

@@ -120,6 +120,43 @@ type UpdateAgentsRequest struct {
 	AgentID string `json: "agentID" validate:"required"`
 }
 
+//get all Agents Response struct
+type AgentResponseBulk struct {
+	// Array of agent details
+	//
+	Result []AgentSummaryDetail `json:"result"`
+
+	// BybID of business
+	//
+	BusinessID string `json:"businessid"`
+
+}
+
+type AgentSummaryDetail struct {
+	// BybID of each agent
+	//
+	BybID string `json:"bybid"`
+
+	// Agent Username/ UserID given by Business (unique to that business)
+	//
+	AgentID string `json: "agentID" validate:"required"`
+
+	// The url of the profile pic for this agent
+	//
+	PicURL string `json: "picurl"`
+	// Name of the agent
+	//
+	AgentName string `json: "agentName" validate:"required"`
+
+	// Type of Agent
+	//
+	AgentType string `json:"agentType" validate:"required"`
+
+	// 10 Digit Phone Number of the agent
+	//
+	PhoneNumber string `json: "phoneNumber" validate:"required"`
+}
+
 //post response
 type AgentsPostSuccess struct {
 	BybID string `json:"bybID"`

@@ -39,3 +39,20 @@ func UpdateAgentsByID(agents *UpdateAgentsRequest) int64 {
 	}
 	return updateResult.ModifiedCount
 }
+
+func AllAgentsByBusinessID (docID string) []AgentSummaryDetail {
+	var agents []AgentSummaryDetail
+	collectionName := shashankMongo.DatabaseName.Collection("agents")
+
+	cursor, err := collectionName.Find(shashankMongo.CtxForDB, bson.M{"businessid":docID})
+	if err != nil {
+		log.Error("AllAgentsByBusinessID Read ERROR : ")
+		log.Error(err)
+	}
+	if err = cursor.All(shashankMongo.CtxForDB, &agents); err != nil {
+		log.Error("AllAgentsByBusinessID Write ERROR : ")
+		log.Error(err)
+	}
+
+	return agents
+}
