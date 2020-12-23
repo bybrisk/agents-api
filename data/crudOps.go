@@ -45,3 +45,23 @@ func GetAllAgents (docID string) *AgentResponseBulk {
 	
 	return &response
 }
+
+func DeleteAgentsByID (docID string) *AgentsPostSuccess{
+
+	var response AgentsPostSuccess
+	res := DeleteAgentFromDB(docID)
+
+	if res == 1 {
+		response = AgentsPostSuccess{
+			BybID: docID,
+			Message: "Agent deleted successfully",
+		}
+	} else {
+		response = AgentsPostSuccess{
+			BybID: docID,
+			Message: "Error deleting agents!",
+		}
+	}
+
+	return &response
+}

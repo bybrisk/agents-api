@@ -56,3 +56,17 @@ func AllAgentsByBusinessID (docID string) []AgentSummaryDetail {
 
 	return agents
 }
+
+func DeleteAgentFromDB (docID string) int64{
+	collectionName := shashankMongo.DatabaseName.Collection("agents")
+	id, _ := primitive.ObjectIDFromHex(docID)
+	filter := bson.M{"_id": id}
+
+	deleteResult, err := collectionName.DeleteOne(shashankMongo.CtxForDB, filter)
+	if err != nil {
+		log.Error("DeleteAgentFromDB ERROR:")
+		log.Error(err)
+	}
+	return deleteResult.DeletedCount
+	
+}

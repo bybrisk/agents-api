@@ -1,12 +1,3 @@
-package data_test
-
-import (
-	"testing"
-	//"github.com/go-playground/validator/v10"
-	//"github.com/bybrisk/structs"
-	"github.com/bybrisk/agents-api/data"
-)
-
 func TestAddData(t *testing.T) {
 	agentRequest := &data.NewAgentsRequest{
 		PicURL : "img/pic.jpg",
@@ -53,12 +44,3 @@ func TestGetAllAgents(t *testing.T) {
 	}
 
 }
-
-func TestDeleteByID(t *testing.T) {
-	id:="5fe3345f379fb7f8f64da4c4"
-	res:= data.DeleteAgentsByID(id) 
-	if res.Message!="Agent deleted successfully"{
-		t.Fail()
-	}
-}
-
