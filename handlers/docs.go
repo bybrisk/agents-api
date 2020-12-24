@@ -78,7 +78,7 @@ type agentsGetAllResponseWrapper struct {
 
 // Details of a single agents of a particular business account
 // swagger:response getSingleAgentsDetails
-type agentsGetAllResponseWrapper struct {
+type agentsGetSingleResponseWrapper struct {
 	// Complete details of a single agents of a business account
 	// in: body
 	Body data.SingleAgentResponse
