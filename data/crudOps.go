@@ -65,3 +65,9 @@ func DeleteAgentsByID (docID string) *AgentsPostSuccess{
 
 	return &response
 }
+
+func GetSingleAgent (docID string) *SingleAgentResponse {
+	
+	res := FetchAgentFromDB(docID)
+	return res
+}

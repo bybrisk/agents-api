@@ -70,3 +70,18 @@ func DeleteAgentFromDB (docID string) int64{
 	return deleteResult.DeletedCount
 	
 }
+
+func FetchAgentFromDB (docID string) *SingleAgentResponse {
+	var agent *SingleAgentResponse
+	collectionName := shashankMongo.DatabaseName.Collection("agents")
+	id, _ := primitive.ObjectIDFromHex(docID)
+	filter := bson.M{"_id": id}
+	
+	err:= collectionName.FindOne(shashankMongo.CtxForDB, filter).Decode(&agent)
+	if err != nil {
+		log.Error("FetchAgentFromDB ERROR:")
+		log.Error(err)
+	}
+
+	return agent
+}

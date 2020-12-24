@@ -157,9 +157,52 @@ type AgentSummaryDetail struct {
 	PhoneNumber string `json: "phoneNumber" validate:"required"`
 }
 
+//Single Agent Get Response
+type SingleAgentResponse struct {
+	// The url of the profile pic for this agent
+	//
+	PicURL string `json: "picurl"`
+
+	// The Name of the agent
+	//
+	AgentName string `json: "agentName"`
+
+	// Type of Agent
+	//
+	AgentType string `json:"agentType"`
+
+	// BybID of the business the agent belongs to
+	//
+	BusinessID string `json: "businessID"`
+
+	// 10 Digit Phone Number of the agent
+	//
+	PhoneNumber string `json: "phoneNumber"`
+
+	// Permanent Address of the Agent
+	//
+	Address string `json: "address"`
+
+	// Maximum weight (in Kg) the agent can carry in a single trip
+	//
+	MaxWeightCapacity int64 `json: "maxWeightCapacity"`
+
+	// Maximum duration (in hr) the agent can work on a single trip
+	//
+	MaxHourCapacity int64 `json: "maxHourCapacity"`
+
+	// Agent Username/ UserID given by Business (unique to that business)
+	//	
+	AgentID string `json: "agentID"`
+}
+
 //post response
 type AgentsPostSuccess struct {
+	// uuid of the object (agent, business, etc.)
+	//
 	BybID string `json:"bybID"`
+	// Response message of success or failure
+	//
 	Message string `json:"message"`
 }
 
