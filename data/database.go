@@ -82,6 +82,5 @@ func FetchAgentFromDB (docID string) *SingleAgentResponse {
 		log.Error("FetchAgentFromDB ERROR:")
 		log.Error(err)
 	}
-
 	return agent
 }

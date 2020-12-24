@@ -44,3 +44,20 @@ func TestGetAllAgents(t *testing.T) {
 	}
 
 }
+
+func TestDeleteByID(t *testing.T) {
+	id:="5fe3345f379fb7f8f64da4c4"
+	res:= data.DeleteAgentsByID(id) 
+	if res.Message!="Agent deleted successfully"{
+		t.Fail()
+	}
+}
+
+func TestGetSingleAgents(t *testing.T) {
+	id:="ivuivrevrhhr"
+	res:= data.GetSingleAgent(id) 
+	if res==nil{
+		t.Fail()
+	}
+
+}
