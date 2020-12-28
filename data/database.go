@@ -40,6 +40,18 @@ func UpdateAgentsByID(agents *UpdateAgentsRequest) int64 {
 	return updateResult.ModifiedCount
 }
 
+func AddBybIDToAgents(agents *NewAgentsRequest) int64 {
+	collectionName := shashankMongo.DatabaseName.Collection("agents")
+	id, _ := primitive.ObjectIDFromHex(agents.BybID)
+	filter := bson.M{"_id": id}
+	updateResult, err := collectionName.UpdateOne(shashankMongo.CtxForDB, filter, bson.D{{Key: "$set", Value: agents}})
+	if err != nil {
+		log.Error("AddBybIDToAgents ERROR:")
+		log.Error(err)
+	}
+	return updateResult.ModifiedCount
+}
+
 func AllAgentsByBusinessID (docID string) []AgentSummaryDetail {
 	var agents []AgentSummaryDetail
 	collectionName := shashankMongo.DatabaseName.Collection("agents")

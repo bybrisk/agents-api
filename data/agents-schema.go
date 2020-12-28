@@ -7,6 +7,8 @@ import (
 
 //post request to add agents
 type NewAgentsRequest struct{
+
+	BybID string `json:"-"`
 	// The url of the profile pic for this agent
 	//
 	// required: false

@@ -3,11 +3,20 @@ package data
 func AddData (d *NewAgentsRequest) *AgentsPostSuccess{
 	//save data to database and return ID
 	id := CreateAgents(d)
-
+	d.BybID = id
+	res:= AddBybIDToAgents(d)
 	//sending response
-	var response = AgentsPostSuccess{
-		BybID: id,
-		Message: "Agent added successfully with agentID",
+	var response AgentsPostSuccess
+	if res == 1 {
+		response = AgentsPostSuccess{
+			BybID: id,
+			Message: "Agent added successfully with agentID",
+		}
+	} else {
+		response = AgentsPostSuccess{
+			BybID: id,
+			Message: "Error adding agents!",
+		}
 	}
 
 	return &response
