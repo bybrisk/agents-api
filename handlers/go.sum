@@ -1,5 +1,6 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/aws/aws-sdk-go v1.34.28/go.mod h1:H7NKnBqNVzoTJpGfLrQkkD+ytBA93eiDYi/+8rV9s48=
+github.com/bybrisk/agents-api v0.0.0-20210118102012-608a19132f27 h1:IfFnWN3v2mI3qkr5zDB3Puxv0yAgEMc3D0Rwpq0XQl8=
 github.com/bybrisk/agents-api/data v0.0.0-20210118100646-09e7e29ff6f1 h1:xOybtllEQJKMq9Q4dDwwBt1N+XCl3ng0sYVwvEr0nJo=
 github.com/bybrisk/agents-api/data v0.0.0-20210118100646-09e7e29ff6f1/go.mod h1:bWz+IjEl9qmVK5LD5zh+d0se/Fl58YIugYNV/bkK2ys=
 github.com/bybrisk/structs v0.0.0-20201109044720-899a1e012b8c/go.mod h1:+ozPcEcgRTvbDXzFyBlUTgv1G2niBpEsIzF5tySMIck=
