@@ -77,7 +77,7 @@ type UpdateAgentsRequest struct {
 	//
 	// required: false
 	// max length: 1000
-	PicURL string `json:"picurl" validate:"required"`
+	PicURL string `json:"picurl"`
 
 	// Modified Name of the agent
 	//
