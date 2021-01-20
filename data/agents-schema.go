@@ -62,6 +62,31 @@ type NewAgentsRequest struct{
 	// required: true
 	// max length: 1000	
 	AgentID string `json: "agentID" validate:"required"`
+
+	// 12 Digit Aadhar Card number of the Agent
+	//
+	// required: true
+	// max length: 1000	
+	AadharNumber string `json: "aadharNumber" validate:"required"`
+
+	// Driving licence number of the agent
+	//
+	// required: true
+	// max length: 1000	
+	DrivingLicenceNumber string `json: "drivingLicenceNumber" validate:"required"`
+
+	// Type of Vehicle Agent is using
+	//
+	// required: true
+	// max length: 1000	
+	// example: TWO WHEELER | VAN | MINI TRUCK | TRUCK
+	TypeOfVehicle string `json: "typeOfVehicle" validate:"required"`
+
+	// PAN Card number of the Agent 
+	//
+	// required: false
+	// max length: 1000	
+	PANCardNumber string `json: "panCardNumber"`
 }
 
 //update agents request
@@ -120,6 +145,31 @@ type UpdateAgentsRequest struct {
 	// required: true
 	// max length: 1000
 	AgentID string `json: "agentID" validate:"required"`
+
+	// 12 Digit Aadhar Card number of the Agent
+	//
+	// required: true
+	// max length: 1000	
+	AadharNumber string `json: "aadharNumber" validate:"required"`
+
+	// Driving licence number of the agent
+	//
+	// required: true
+	// max length: 1000	
+	DrivingLicenceNumber string `json: "drivingLicenceNumber" validate:"required"`
+
+	// Type of Vehicle Agent is using
+	//
+	// required: true
+	// max length: 1000	
+	// example: TWO WHEELER | VAN | MINI TRUCK | TRUCK
+	TypeOfVehicle string `json: "typeOfVehicle" validate:"required"`
+
+	// PAN Card number of the Agent 
+	//
+	// required: false
+	// max length: 1000	
+	PANCardNumber string `json: "panCardNumber"`
 }
 
 //get all Agents Response struct
