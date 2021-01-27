@@ -246,6 +246,22 @@ type SingleAgentResponse struct {
 	// Agent Username/ UserID given by Business (unique to that business)
 	//	
 	AgentID string `json: "agentID"`
+
+	// 12 Digit Aadhar Card number of the Agent
+	//
+	AadharNumber string `json: "aadharNumber" validate:"required"`
+
+	// Driving licence number of the agent
+	//
+	DrivingLicenceNumber string `json: "drivingLicenceNumber" validate:"required"`
+
+	// Type of Vehicle Agent is using
+	//
+	TypeOfVehicle string `json: "typeOfVehicle" validate:"required"`
+
+	// PAN Card number of the Agent 
+	//	
+	PANCardNumber string `json: "panCardNumber"`
 }
 
 //post response
