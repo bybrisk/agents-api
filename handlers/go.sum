@@ -1,10 +1,8 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/aws/aws-sdk-go v1.34.28/go.mod h1:H7NKnBqNVzoTJpGfLrQkkD+ytBA93eiDYi/+8rV9s48=
-github.com/bybrisk/agents-api v0.0.0-20210118102723-e1ffc3514a2a h1:/GwfHYkBDfIugTGdANh7uG+FQHA5AaJUHTMjbVYjZ38=
-github.com/bybrisk/agents-api/data v0.0.0-20210118102723-e1ffc3514a2a h1:7ccTG1MSFt4107EFkclOsUhEqqL3gyGVBH95shLLDXs=
-github.com/bybrisk/agents-api/data v0.0.0-20210118102723-e1ffc3514a2a/go.mod h1:bWz+IjEl9qmVK5LD5zh+d0se/Fl58YIugYNV/bkK2ys=
-github.com/bybrisk/agents-api/data v0.0.0-20210120121538-a9f0230ec319 h1:JhRqIamVlRI9RXHGNDpS1dn5yclYjUGs1LARPXgqtYU=
-github.com/bybrisk/agents-api/data v0.0.0-20210120121538-a9f0230ec319/go.mod h1:dOYtF/fKJUkOaHeKa9xxir9wSvx4/pQALuiuP6bJ53s=
+github.com/bybrisk/agents-api v0.0.0-20210120121818-4eec95ad812d h1:KXIStX1aMnAR4ra5K5DqG9otbexZUcK+nMK7p3BHqH4=
+github.com/bybrisk/agents-api/data v0.0.0-20210127082805-3dba41e5ac4f h1:1KymzcSDEOvL9CbQMbtfxv8T1OKtc7X7SfyXU+ztU+w=
+github.com/bybrisk/agents-api/data v0.0.0-20210127082805-3dba41e5ac4f/go.mod h1:dOYtF/fKJUkOaHeKa9xxir9wSvx4/pQALuiuP6bJ53s=
 github.com/bybrisk/structs v0.0.0-20201109044720-899a1e012b8c/go.mod h1:+ozPcEcgRTvbDXzFyBlUTgv1G2niBpEsIzF5tySMIck=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -82,7 +80,6 @@ github.com/tidwall/pretty v1.0.0/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhV
 github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c/go.mod h1:lB8K/P019DLNhemzwFU4jHLhdvlE6uDZjXFejJXr49I=
 github.com/xdg/stringprep v0.0.0-20180714160509-73f8eece6fdc/go.mod h1:Jhud4/sHMO4oL310DaZAKk9ZaJ08SJfe+sJh0HrGL1Y=
 go.mongodb.org/mongo-driver v1.4.3/go.mod h1:WcMNYLx/IlOxLe6JRJiv2uXuCz6zBLndR4SoGjYphSc=
-go.mongodb.org/mongo-driver v1.4.4/go.mod h1:WcMNYLx/IlOxLe6JRJiv2uXuCz6zBLndR4SoGjYphSc=
 go.mongodb.org/mongo-driver v1.4.5 h1:TLtO+iD8krabXxvY1F1qpBOHgOxhLWR7XsT7kQeRmMY=
 go.mongodb.org/mongo-driver v1.4.5/go.mod h1:WcMNYLx/IlOxLe6JRJiv2uXuCz6zBLndR4SoGjYphSc=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=

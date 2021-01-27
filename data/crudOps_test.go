@@ -2,12 +2,13 @@ package data_test
 
 import (
 	"testing"
+	"fmt"
 	//"github.com/go-playground/validator/v10"
 	//"github.com/bybrisk/structs"
 	"github.com/bybrisk/agents-api/data"
 )
 
-func TestAddData(t *testing.T) {
+/*func TestAddData(t *testing.T) {
 	agentRequest := &data.NewAgentsRequest{
 		PicURL : "img/pic.jpg",
 		AgentName : "Sanjay sinha",
@@ -24,4 +25,9 @@ func TestAddData(t *testing.T) {
 		t.Fail()
 	}
 
+}*/
+
+func TestGetAgents(t *testing.T) {
+	res:=data.GetSingleAgent("600e9c8ae3ffe1ac1f5f3a32")
+	fmt.Println(res)
 }
