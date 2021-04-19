@@ -45,6 +45,14 @@ type accountPostResponseWrapper struct {
 	Body data.AgentsPostSuccess
 }
 
+// Success message on auto adding multiple Agents
+// swagger:response autoAgentsPostResponse
+type accountAutoPostResponseWrapper struct {
+	// Success message on newly created Agents
+	// in: body
+	Body data.AutoAgentsPostSuccess
+}
+
 // No content is returned by this API endpoint
 // swagger:response noContentResponse
 type noContentResponseWrapper struct {

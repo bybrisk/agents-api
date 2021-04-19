@@ -27,7 +27,17 @@ import (
 
 }*/
 
-func TestGetAgents(t *testing.T) {
+/*func TestGetAgents(t *testing.T) {
 	res:=data.GetSingleAgent("600e9c8ae3ffe1ac1f5f3a32")
+	fmt.Println(res)
+}*/
+
+func TestAutoAddAgents(t *testing.T) {
+	autoAdd := &data.AutoNewAgentsRequest{
+		BusinessID:"6079d92f44956a457f5f275d",
+		AgentNum:10,
+		MaxWeightCapacity:30,
+	}
+	res:= data.AutoAddAgents(autoAdd)
 	fmt.Println(res)
 }

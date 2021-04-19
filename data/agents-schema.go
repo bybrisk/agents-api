@@ -89,6 +89,60 @@ type NewAgentsRequest struct{
 	PANCardNumber string `json: "panCardNumber"`
 }
 
+type AutoNewAgentsRequest struct{
+
+	BybID string `json:"-"`
+
+	// The Name of the agent
+	//
+	// required: false
+	// max length: 1000
+	AgentName string `json: "agentName"`
+
+	// BybID of the business these agent belongs to
+	//
+	// required: true
+	// max length: 1000
+	BusinessID string `json: "businessID" validate:"required"`
+
+	// Number of agents required
+	//
+	// required: true
+	// max length: 1000
+	AgentNum int64 `json: "agentNum" validate:"required"`
+
+	// 10 Digit Phone Number of the agent
+	//
+	// required: false
+	// max length: 1000
+	PhoneNumber string `json: "phoneNumber"`
+
+	// Maximum weight (in Kg) the agent can carry in a single trip
+	//
+	// required: true
+	// max length: 1000
+	MaxWeightCapacity int64 `json: "maxWeightCapacity" validate:"required"`
+
+	// Maximum duration (in hr) the agent can work on a single trip
+	//
+	// required: false
+	// max length: 1000
+	MaxHourCapacity int64 `json: "maxHourCapacity"`
+
+	// Agent Username/ UserID given by Business (unique to that business)
+	//
+	// required: false
+	// max length: 1000	
+	AgentID string `json: "agentID"`
+
+	// Type of Vehicle Agent is using
+	//
+	// required: false
+	// max length: 1000	
+	// example: TWO WHEELER | VAN | MINI TRUCK | TRUCK
+	TypeOfVehicle string `json: "typeOfVehicle"`
+}
+
 //update agents request
 type UpdateAgentsRequest struct {
 
@@ -274,12 +328,31 @@ type AgentsPostSuccess struct {
 	Message string `json:"message"`
 }
 
+type AutoAgentsPostSuccess struct {
+	// BybID of the businessID
+	//
+	BybID string `json:"bybID"`
+
+	// uuid (bybID) of all the created agents
+	//
+	AgentIDs []string `json:"agentIDs"`
+
+	// Response message of success or failure
+	//
+	Message string `json:"message"`
+}
+
 func (d *NewAgentsRequest) Validate() error {
 	validate := validator.New()
 	return validate.Struct(d)
 }
 
 func (d *UpdateAgentsRequest) ValidateUpdateRequest() error {
+	validate := validator.New()
+	return validate.Struct(d)
+}
+
+func (d *AutoNewAgentsRequest) ValidateAutoNewAgentsRequest() error {
 	validate := validator.New()
 	return validate.Struct(d)
 }

@@ -22,6 +22,27 @@ func AddData (d *NewAgentsRequest) *AgentsPostSuccess{
 	return &response
 }
 
+func AutoAddAgents(d *AutoNewAgentsRequest) *AutoAgentsPostSuccess{
+	var response AutoAgentsPostSuccess
+	var resStringArray []string
+
+	if (d.AgentNum>50){
+		response = AutoAgentsPostSuccess{
+			BybID: d.BusinessID,
+			AgentIDs: resStringArray, 
+			Message: "Error! Agents should be below 50!",
+		}
+	} else {
+		 res:=AddRequiredAgents(d)
+		 response = AutoAgentsPostSuccess{
+			BybID: d.BusinessID,
+			AgentIDs:res,
+			Message: "All agents created successfully.",
+		}
+	}
+	return &response
+}
+
 func UpdateAgents(d *UpdateAgentsRequest) *AgentsPostSuccess {
 
 	res := UpdateAgentsByID(d)

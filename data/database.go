@@ -3,6 +3,7 @@ package data
 import (
 	"fmt"
 	//"github.com/bybrisk/structs"
+	"strconv"
 	"go.mongodb.org/mongo-driver/bson"
 	"github.com/shashank404error/shashankMongo"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -95,4 +96,43 @@ func FetchAgentFromDB (docID string) *SingleAgentResponse {
 		log.Error(err)
 	}
 	return agent
+}
+
+func AddRequiredAgents(d *AutoNewAgentsRequest) []string {
+	collectionName := shashankMongo.DatabaseName.Collection("agents")
+
+	//initial_interface := []interface{}{}
+	meta_interface:= []interface{}{}
+	
+	for i := 0; i<int(d.AgentNum); i++ {
+		var newAgent AutoNewAgentsRequest
+		newAgent.AgentName = "Agent" + strconv.Itoa(i+1)
+		newAgent.BusinessID = d.BusinessID
+		newAgent.PhoneNumber = "9122XXXXXX"
+		newAgent.MaxWeightCapacity = d.MaxWeightCapacity
+		newAgent.MaxHourCapacity = 8
+		newAgent.AgentID = "Agent00" + strconv.Itoa(i+1)
+		newAgent.TypeOfVehicle = "TWO WHEELER"
+
+		meta_interface = append([]interface{}{newAgent}, meta_interface...)
+	}
+
+	//fmt.Println(meta_interface)
+	
+
+	insertManyResult, err := collectionName.InsertMany(shashankMongo.CtxForDB, meta_interface)
+	if err != nil {
+		log.Error("AddRequiredAgents ERROR:")
+		log.Error(err)
+	}
+
+	var resultIDArr []string
+
+	//fmt.Println(insertManyResult.InsertedIDs)
+	for _,val:=range insertManyResult.InsertedIDs{
+		resultID = val.(primitive.ObjectID).Hex()
+		resultIDArr = append(resultIDArr,resultID)
+	}
+	
+	return resultIDArr
 }
